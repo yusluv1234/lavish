@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MdFingerprint } from 'react-icons/md'
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { IconContext } from 'react-icons/lib';
 import { Button } from '../button/Button';
 
 import './Navbar.css';
@@ -21,10 +22,15 @@ const Navbar = () => {
         }
     };
 
+    useEffect(() => {
+        showButton();
+    }, [])
+
     window.addEventListener('resize', showButton);
 
     return (
         <>
+        <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
             <div className='navbar-container container'>
                 <Link to='#' className='navbar-logo'>
@@ -64,6 +70,7 @@ const Navbar = () => {
             </ul>
             </div>
         </div>
+        </IconContext.Provider>
         </>
     )
 }
