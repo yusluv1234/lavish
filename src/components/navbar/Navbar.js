@@ -34,35 +34,35 @@ const Navbar = () => {
         <div className='navbar'>
             <div className='navbar-container container'>
                 <Link to='#' className='navbar-logo'>
-                <MdFingerprint className='navbar-icon' />    
+                <MdFingerprint className='navbar-icon' onClick={closeMobileMenu} />    
                 LAVISH</Link>
             <div className='menu-icon' onClick={handleClick}>
             {click ? <FaTimes /> : <FaBars />}
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                 <li className='nav-item'>
-                    <Link to='/home' className='nav-links'>
+                    <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
                     Home
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to='/services' className='nav-links'>
+                    <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
                     Services
                     </Link>
                 </li>
 
                 <li className='nav-item'>
-                    <Link to='/products' className='nav-links'>
+                    <Link to='/products' className='nav-links' onClick={closeMobileMenu}>
                     Products
                     </Link>
                 </li>
                 <li>
                     {button ? (
-                        <Link to='/sign-up' className='btn-link'>
+                        <Link to='/sign-up' className='btn-link' onClick={closeMobileMenu}>
                             <Button buttonStyle='btn--outline'>SIGN UP</Button>
                         </Link>
                     ) : (
-                        <Link to='/sign-up' className='btn-link'>
+                        <Link to='/sign-up' className='btn-link' onClick={closeMobileMenu}>
                         <Button buttonStyle='btn--outline' buttonSize='btn--mobile'>SIGN UP</Button>
                         </Link>
                     )}
